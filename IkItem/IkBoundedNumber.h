@@ -3,7 +3,6 @@
 
 #include <IkItem.h>
 
-
 class BoundedNumber
 {
 public:
@@ -32,6 +31,7 @@ private:
 };
 Q_DECLARE_METATYPE(BoundedNumber)
 
+namespace IKEngine {
 class IkBoundedNumber :public IkItem{
     Q_OBJECT
 
@@ -41,6 +41,8 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
+}
+
 
 
 #endif // IKBOUNDEDNUMBER_H

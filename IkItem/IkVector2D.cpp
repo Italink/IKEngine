@@ -4,8 +4,7 @@
 #include <QSpinBox>
 #include <QVector2D>
 
-IK_ITEM_BINDER(QVector2D,IkVector2D)
-
+namespace IKEngine {
 QWidget *IkVector2D::createWidget()
 {
     QWidget* widget=new QWidget;
@@ -29,4 +28,5 @@ QWidget *IkVector2D::createWidget()
         setValue(vec);
     });
     return widget;
+}
 }

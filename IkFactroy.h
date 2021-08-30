@@ -1,10 +1,12 @@
-﻿#ifndef IKFACTROY_H
+#ifndef IKFACTROY_H
 #define IKFACTROY_H
 
 #include <QObject>
 #include <QMetaObject>
 #include <QMap>
 #include "IkItem.h"
+
+namespace IKEngine {
 
 class IkFactroy:public QObject
 {
@@ -17,5 +19,8 @@ private:
     IkFactroy();
     QMap<int,QMetaObject> itemCreator;
 };
+
+}
+
 
 #endif // IKFACTROY_H

@@ -1,6 +1,7 @@
 #include "IkInt.h"
 #include <IkItem/Widgets/NumberBox.h>
-IK_ITEM_BINDER(int,IkInt)
+
+namespace IKEngine {
 IkInt::IkInt(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -13,4 +14,5 @@ QWidget *IkInt::createWidget()
         setVar(var);
     });
     return box;
+}
 }

@@ -1,7 +1,7 @@
 #include "IkDouble.h"
 #include <IkItem/Widgets/NumberBox.h>
 
-IK_ITEM_BINDER(double,IkDouble)
+namespace IKEngine {
 IkDouble::IkDouble(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -14,4 +14,5 @@ QWidget *IkDouble::createWidget()
         setVar(var);
     });
     return box;
+}
 }

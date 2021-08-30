@@ -3,6 +3,7 @@
 
 #include <IkItem.h>
 
+namespace IKEngine {
 class IkInt :public IkItem{
     Q_OBJECT
 public:
@@ -11,6 +12,6 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
-
+}
 
 #endif // IKINT_H

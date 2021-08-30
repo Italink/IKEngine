@@ -3,6 +3,7 @@
 
 #include <IkItem.h>
 
+namespace IKEngine {
 class IkFloat :public IkItem{
     Q_OBJECT
 public:
@@ -12,5 +13,6 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
+}
 
 #endif // IKDOUBLE_H

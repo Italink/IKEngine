@@ -4,6 +4,7 @@
 #include "IkItem.h"
 #include "IkPanel.h"
 #include "IkFactroy.h"
+namespace IKEngine {
 
 IkPanel::IkPanel(QObject* ikObject,QWidget *parent)
     : QTreeWidget(parent)
@@ -20,9 +21,10 @@ void IkPanel::initilizeUI()
     setIndentation(8);
     setHeaderLabels(QStringList({"name","attribute"}));
     headerItem()->setTextAlignment(0,Qt::AlignCenter);
+    setMinimumWidth(290);
     connect(header(),&QHeaderView::sectionResized,this,[this](int logicalIndex, int , int newSize){
-        if(logicalIndex==1&&newSize!=180){
-            header()->resizeSection(logicalIndex,180);
+        if(logicalIndex==1&&newSize>170){
+            header()->resizeSection(logicalIndex,170);
         }
     });
     headerItem()->setTextAlignment(1,Qt::AlignCenter);
@@ -53,4 +55,5 @@ void IkPanel::createPanel()
         if(item!=nullptr)
             item->setUp(this);
     }
+}
 }

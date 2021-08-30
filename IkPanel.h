@@ -1,7 +1,9 @@
-﻿#ifndef IKPANEL_H
+#ifndef IKPANEL_H
 #define IKPANEL_H
 
 #include <QTreeWidget>
+
+namespace IKEngine {
 
 class IkPanel : public QTreeWidget
 {
@@ -12,8 +14,8 @@ public:
     void createPanel();
 private:
     QObject*const ikObject_;
-signals:
 
 };
+}
 
 #endif // IKPANEL_H

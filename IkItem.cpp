@@ -1,16 +1,16 @@
 #include "IkFactroy.h"
 #include "IkItem.h"
-
 #include <QHBoxLayout>
 #include <QLineEdit>
-#include <QtDebug>
+
+namespace IKEngine {
 
 IkItem::IkItem(QObject* ikObject, QMetaProperty ikVar, QObject *parent)
     : QObject(parent)
     , ikObject_(ikObject)
     , ikVar_(ikVar)
 {
-    setText(0,ikVar.name());
+    setText(0,QString(ikVar.name()).replace("_"," "));
 }
 
 QWidget *IkItem::createWidget()
@@ -71,7 +71,4 @@ QVariant IkItem::getVar()
     return ikObject_->property(ikVar_.name());
 }
 
-IkItemRegister::IkItemRegister(int userType, QMetaObject meta)
-{
-    IkFactroy::bindIk(userType,meta);
 }

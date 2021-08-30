@@ -1,7 +1,8 @@
 #include "IkColor.h"
 #include <QColorDialog>
 #include <QPushButton>
-IK_ITEM_BINDER(QColor,IkColor)
+
+namespace IKEngine {
 IkColor::IkColor(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -26,4 +27,5 @@ QWidget *IkColor::createWidget()
 
     });
     return btColor;
+}
 }

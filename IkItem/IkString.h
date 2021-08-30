@@ -2,6 +2,7 @@
 #define IkString_H
 #include <IkItem.h>
 
+namespace IKEngine {
 class IkString :public IkItem{
     Q_OBJECT
 
@@ -11,6 +12,6 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
-
+}
 
 #endif // IkString_H

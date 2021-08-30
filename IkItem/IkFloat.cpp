@@ -1,6 +1,7 @@
 #include "IkFloat.h"
 #include <IkItem/Widgets/NumberBox.h>
-IK_ITEM_BINDER(float,IkFloat)
+
+namespace IKEngine {
 QWidget *IkFloat::createWidget()
 {
     NumberBox* box=new NumberBox(getVar().toDouble(),2);
@@ -8,4 +9,5 @@ QWidget *IkFloat::createWidget()
         setVar(var);
     });
     return box;
+}
 }

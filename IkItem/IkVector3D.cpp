@@ -3,7 +3,9 @@
 #include <QHBoxLayout>
 #include <QSpinBox>
 #include <QVector3D>
-IK_ITEM_BINDER(QVector3D,IkVector3D)
+
+namespace IKEngine {
+
 QWidget *IkVector3D::createWidget()
 {
     QWidget* widget=new QWidget;
@@ -35,4 +37,6 @@ QWidget *IkVector3D::createWidget()
         setValue(vec);
     });
     return widget;
+}
+
 }

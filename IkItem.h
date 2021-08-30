@@ -3,6 +3,7 @@
 #include <QMetaProperty>
 #include <QObject>
 #include <QTreeWidgetItem>
+namespace IKEngine {
 
 class IkItem :public QObject, public QTreeWidgetItem
 {
@@ -28,13 +29,7 @@ protected:
     QObject*const ikObject_;
     QMetaProperty ikVar_;
 };
-
-struct IkItemRegister{
-    IkItemRegister(int userType,QMetaObject meta);
-};
-
-#define IK_ITEM_BINDER(VarType,ItemType) \
-    static IkItemRegister VarType##Register = IkItemRegister(QMetaTypeId2<VarType>::qt_metatype_id() ,ItemType::staticMetaObject);
+}
 
 #define IK_ITEM_DECLARE(VarTypename,ItemTypename) \
         IK_ITEM_BINDER(VarTypename,ItemTypename)\

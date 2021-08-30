@@ -1,5 +1,6 @@
 #include "IkFactroy.h"
 #include <IkItem/IkEnum.h>
+namespace IKEngine {
 
 IkFactroy::IkFactroy(){
     qRegisterMetaType<QObject*>();
@@ -30,4 +31,4 @@ IkFactroy *IkFactroy::getInstance()
     return &ins;
 }
 
-
+}

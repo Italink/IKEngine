@@ -1,6 +1,7 @@
 #include "IkString.h"
 #include <QLineEdit>
-IK_ITEM_BINDER(QString,IkString)
+
+namespace IKEngine {
 IkString::IkString(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -13,4 +14,5 @@ QWidget *IkString::createWidget()
         setVar(var);
     });
     return edit;
+}
 }

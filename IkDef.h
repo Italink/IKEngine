@@ -1,6 +1,27 @@
 #ifndef IKDEF_H
 #define IKDEF_H
-#include <QtDebug>
+
+#include "IkPanel.h"
+class QObject;
+
+
+namespace IKEngine {
+
+    void        initialize();
+
+    IkPanel*    createPanel(QObject* obj);
+
+    void registerIkTypeImpl(int typeId,QMetaObject meta);
+
+    template<typename VarType,typename ItemType>
+    void registerIkType(){
+        registerIkTypeImpl(QMetaTypeId2<VarType>::qt_metatype_id() ,ItemType::staticMetaObject);
+    }
+}
+
+#define REG_IK_TYPE(VarType,ItemType) \
+    IKEngine::registerIkTypeImpl(QMetaTypeId2<VarType>::qt_metatype_id() ,ItemType::staticMetaObject);
+
 #define IK_AUTO(type,name)\
     Q_PROPERTY(type name READ get_##name WRITE set_##name NOTIFY name##Changed) \
     type get_##name(){ return name; } \
@@ -12,8 +33,6 @@
     } \
     Q_SIGNAL void name##Changed(type); \
     type name
-
-class IkPanel;
 
 #define Q_OBJECT_IK \
     Q_OBJECT

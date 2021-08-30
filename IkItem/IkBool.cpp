@@ -1,8 +1,7 @@
 #include "IkBool.h"
 #include <QCheckBox>
 
-IK_ITEM_BINDER(bool,IkBool)
-
+namespace IKEngine {
 IkBool::IkBool(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -16,4 +15,5 @@ QWidget *IkBool::createWidget()
         setVar(var);
     });
     return box;
+}
 }

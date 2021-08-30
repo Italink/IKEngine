@@ -4,8 +4,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 #增加CREATE_TEST将不会生成静态库，而是生成一个带有测试界面的程序
 #DEFINES += CREATE_TEST
-
+CONFIG += c++17
 SOURCES += \
+        IkDef.cpp \
         IkFactroy.cpp \
         IkItem.cpp \
         IkItem/IkBool.cpp \

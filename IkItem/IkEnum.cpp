@@ -2,6 +2,7 @@
 #include <QCheckBox>
 #include <QComboBox>
 
+namespace IKEngine {
 IkEnum::IkEnum(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -17,4 +18,5 @@ QWidget *IkEnum::createWidget()
         setVar(var);
     });
     return box;
+}
 }

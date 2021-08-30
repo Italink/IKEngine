@@ -1,7 +1,6 @@
 #include "IkBoundedNumber.h"
 #include <IkItem/Widgets/NumberSlider.h>
 
-IK_ITEM_BINDER(BoundedNumber,IkBoundedNumber)
 BoundedNumber::BoundedNumber(double number, double min, double max, int precision)
     :number_(number)
     ,min_(min)
@@ -61,6 +60,7 @@ bool BoundedNumber::operator==(const BoundedNumber &other)
     return this->number()==other.number();
 }
 
+namespace IKEngine {
 IkBoundedNumber::IkBoundedNumber(QObject *ikObject, QMetaProperty ikVar)
     : IkItem(ikObject,ikVar)
 {
@@ -76,5 +76,6 @@ QWidget *IkBoundedNumber::createWidget()
         setVar(QVariant::fromValue(number));
     });
     return slider;
+}
 }
 

@@ -1,8 +1,9 @@
-﻿#ifndef IkEnum_H
+#ifndef IkEnum_H
 #define IkEnum_H
 
 #include <IkItem.h>
 
+namespace IKEngine {
 class IkEnum :public IkItem{
     Q_OBJECT
 public:
@@ -11,6 +12,6 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
-
+}
 
 #endif // IkEnum_H

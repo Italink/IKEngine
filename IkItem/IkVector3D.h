@@ -3,6 +3,8 @@
 
 #include <IkItem.h>
 
+namespace IKEngine {
+
 class IkVector3D :public IkItem{
     Q_OBJECT
 public:
@@ -12,5 +14,6 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
+}
 
 #endif // IKDOUBLE_H

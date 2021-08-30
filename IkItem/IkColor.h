@@ -3,6 +3,7 @@
 
 #include <IkItem.h>
 
+namespace IKEngine {
 class IkColor :public IkItem{
     Q_OBJECT
 
@@ -12,4 +13,5 @@ public:
 public:
     virtual QWidget *createWidget() override;
 };
+}
 #endif // IKCOLOR_H
